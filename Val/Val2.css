@@ -183,7 +183,7 @@ body {
 
 /* BEAUTIFUL PAGE STYLES */
 .beautiful-page {
-    background-image: url('/Val/Photos/FakeQuestionBackground.JPG'); /* 🔥 Sets full-page background */
+    background-image: url('/Photos/FakeQuestionBackground.JPG'); /* 🔥 Sets full-page background */
     background-size: cover; /* 🔥 Ensures image fills the entire page */
     background-position: center; /* 🔥 Centers the image */
     background-attachment: fixed; /* 🔥 Keeps background in place */
@@ -280,7 +280,7 @@ body {
 
 /* QUESTION PAGE STYLES */
 .question-page {
-    background-image: url('/Val/Photos/QuestionImage.jpeg'); /* 🔥 Set as background */
+    background-image: url('/Photos/QuestionImage.jpeg'); /* 🔥 Set as background */
     background-size: cover; /* Ensures full coverage */
     background-position: center;
     background-repeat: no-repeat; /* Prevents tiling */
