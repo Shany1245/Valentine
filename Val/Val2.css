@@ -1,0 +1,446 @@
+/* GENERAL STYLES FOR ALL PAGES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* OPENING PAGE STYLES */
+.opening-page {
+    background-color: black;
+    background-image: url('Photos/OpeningBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* "Click Here" text and arrow */
+.arrow-text {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.arrow {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Start Button */
+#startButton {
+    background-color: white;
+    color: black;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#startButton:hover {
+    background-color: #ff4d6d;
+    color: white;
+    border-color: #ff4d6d;
+}
+
+/* FADE-OUT TRANSITION EFFECT (FOR OPENING PAGE) */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* GREETING PAGE STYLES */
+.greeting-page {
+    background-color: #ffccdc;
+    background-image: url('Photos/GreetingBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.greeting-page .container {
+    max-width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.greeting-page h1 {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #d63384;
+    text-align: center;
+}
+
+/* ENVELOPE CONTAINER */
+.envelope-container {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ENVELOPE STYLING */
+.envelope {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    background: #d63384;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.envelope .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #c1276e;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transition: transform 0.5s ease;
+}
+
+.envelope .body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #d63384;
+    border-radius: 5px;
+}
+
+.envelope .letter {
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    background: white;
+    top: 20%;
+    left: 10%;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+/* ANIMATION: Open Envelope */
+.envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+    opacity: 1;
+}
+
+/* CIRCLE BUTTON */
+#clickMeButton {
+    display: none;
+    margin-top: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ff4d6d;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clickMeButton:hover {
+    background: #c1276e;
+}
+
+/* Show button when envelope opens */
+.envelope.open + #clickMeButton {
+    display: block;
+}
+
+/* BEAUTIFUL PAGE STYLES */
+.beautiful-page {
+    background-image: url('/Val/Photos/FakeQuestionBackground.JPG'); /* 🔥 Sets full-page background */
+    background-size: cover; /* 🔥 Ensures image fills the entire page */
+    background-position: center; /* 🔥 Centers the image */
+    background-attachment: fixed; /* 🔥 Keeps background in place */
+    background-repeat: no-repeat; /* 🔥 Prevents tiling */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.text-container {
+    position: absolute;
+    bottom: 10%; /* 🔥 Moves text 4/5 down the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* 🔥 Adds slight background for readability */
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXT STYLES */
+.compliment {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63384;
+    margin: 0;
+}
+/* ❤️ HEART CONTAINER */
+.heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+    margin-top: 100%; /* Space between text and heart */
+}
+
+/* ❤️ HEART IMAGE */
+.heart-img {
+    width: 120px; /* Adjust the size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* ❤️ HEART TEXT (Centered Inside the Image) */
+.heart-text {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Makes sure only the heart is clickable */
+}
+
+.apology-text {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* ❤️ Click This & Arrow */
+.click-arrow {
+    position: absolute;
+    bottom: 26%;
+    left: 90%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.arrow {
+    display: block;
+    font-size: 30px;
+}
+
+/* ❤️ HOVER EFFECT */
+.heart-container a:hover .heart-img {
+    transform: scale(1.1);
+}
+
+/* QUESTION PAGE STYLES */
+.question-page {
+    background-image: url('/Val/Photos/QuestionImage.jpeg'); /* 🔥 Set as background */
+    background-size: cover; /* Ensures full coverage */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-page .container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+/* 🔥 FIXED: Perfect button alignment */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Ensures equal spacing */
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Yes Button */
+#yes-btn {
+    background-color: #ff4d79;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+    position: relative;
+}
+
+/* No Button Wrapper (Now centered and fixed) */
+#no-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
+
+/* No Button (Moves inside its wrapper) */
+#no-btn {
+    background-color: #555;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+    position: absolute;
+}
+
+/* PRINCESS PAGE */
+.princess-page {
+    background: linear-gradient(135deg, #e00c33, #ff9a9e); /* 🔥 Red-Pink Gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.princess-page .container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* Soft white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.princess-page h1 {
+    font-size: 24px;
+    color: #ff0000;
+}
+
+.princess-page h2 {
+    font-size: 18px;
+    color: rgb(162, 16, 94);
+    line-height: 1.6;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #c1276e;
+}
+
+/* DISABLED "NO" BUTTON */
+#no-btn.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ❤️ VALENTINE PAGE STYLES */
+.valentine-page {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft Romantic Gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.valentine-page .container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+/* ❤️ Heart Image Styling */
+.valentine-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.valentine-page h1 {
+    font-size: 24px;
+    color: #ff0000;
+}
+
+.valentine-page p {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(102, 0, 105);
+    line-height: 1.6;
+}
