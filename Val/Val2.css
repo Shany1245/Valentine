@@ -10,7 +10,7 @@ body {
 /* OPENING PAGE STYLES */
 .opening-page {
     background-color: black;
-    background-image: url('Photos/OpeningBackground.jpg');
+    background-image: url('Photos/OpeningBackground.JPG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
